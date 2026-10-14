@@ -1,0 +1,14 @@
+# Step 2 only: PostgreSQL with pgvector, for when you move off SQLite.
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: xk
+      POSTGRES_PASSWORD: xk
+      POSTGRES_DB: xplorakodo
+    ports: ["5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/schema.postgres.sql:/docker-entrypoint-initdb.d/001_schema.sql
+volumes:
+  pgdata:

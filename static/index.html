@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XploraKōdo Tutor</title>
+<style>
+:root{--paper:#F1F3F1;--surface:#fff;--ink:#1B2A33;--muted:#5B6B74;--line:#D5DBD8;--kon:#23406B;--on-kon:#fff;--weak:#B8462F;--mid:#D9A441;--strong:#2E7A66;--font:"Noto Sans","Noto Sans JP","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",sans-serif}
+:root[data-theme=dark]{--paper:#111A1F;--surface:#1A262D;--ink:#E7ECEA;--muted:#9AA9B1;--line:#2C3B44;--kon:#7FA3D9;--on-kon:#0F1A22;--weak:#E0705A;--mid:#E6B955;--strong:#4FB596}
+*{box-sizing:border-box}html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.55}
+header{position:sticky;top:0;z-index:5;background:var(--paper);padding:12px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+header h1{margin:0;font-size:1.1rem}.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.chip{font-size:.82rem;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:3px 10px;color:var(--muted)}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,430px);gap:20px;padding:20px;max-width:1180px;margin:0 auto}
+main.one{grid-template-columns:minmax(0,640px);justify-content:center}
+@media(max-width:860px){main{grid-template-columns:1fr;padding:12px}}
+.tabs{display:none;gap:8px;padding:10px 12px 0}@media(max-width:860px){.tabs.on{display:flex}main.tab-p #side,main.tab-m #left{display:none}}
+h2{font-size:1.05rem;margin:0 0 10px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.stack>*+*{margin-top:14px}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.sp{flex:1}
+label{display:block;font-weight:600;margin-bottom:4px}
+input[type=text],select,textarea{width:100%;font:inherit;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+header select{width:auto;padding:5px 8px}textarea{min-height:84px;resize:vertical}
+button{font:inherit;font-weight:600;background:var(--kon);color:var(--on-kon);border:0;border-radius:8px;padding:9px 16px;cursor:pointer}
+button.ghost{background:transparent;color:var(--kon);border:1px solid var(--kon)}button.sm{padding:5px 11px;font-size:.85rem}
+button:disabled{opacity:.45;cursor:not-allowed}:focus-visible{outline:3px solid var(--mid);outline-offset:2px}.hidden{display:none!important}
+.err{min-height:1.3em;color:var(--weak);font-size:.92rem}.muted{color:var(--muted)}
+.prog{height:8px;background:var(--line);border-radius:9px;overflow:hidden}.prog i{display:block;height:100%;background:var(--kon);transition:width .25s}
+.opt{display:block;width:100%;text-align:left;background:var(--paper);color:var(--ink);border:1px solid var(--line);margin-top:8px;font-weight:500}
+.opt.sel{border-color:var(--kon);box-shadow:inset 0 0 0 2px var(--kon)}
+.plist button{display:flex;justify-content:space-between;width:100%;margin-top:8px;background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.msg{border-left:3px solid var(--line);padding:2px 0 2px 12px}.msg.q{border-color:var(--kon)}.msg.a{border-color:var(--muted);color:var(--muted)}
+.fb{border-radius:8px;border:1px solid var(--line);padding:10px 12px;background:var(--paper)}
+.meter{height:6px;border-radius:9px;background:var(--line);overflow:hidden;margin:6px 0}.meter i{display:block;height:100%}
+.think{font-style:italic;margin-top:6px}details{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px 12px}summary{cursor:pointer;font-weight:600}
+.vt{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:6px}.vt td{padding:3px 6px;border-top:1px solid var(--line)}
+table.hm{border-collapse:separate;border-spacing:3px;width:100%;font-size:.8rem}.hm th{font-weight:600;text-align:left;padding:2px 4px}
+.hm td{text-align:center;border-radius:6px;padding:9px 2px;color:#fff;font-weight:700}.hm td.n{background:var(--line);color:var(--muted)}
+.hm td:focus-visible{outline:3px solid var(--ink)}.sticky{position:sticky;bottom:0;background:var(--surface);padding-top:8px}
+.big{font-size:2rem;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <h1>XploraKōdo Tutor</h1>
+  <div class="bar">
+    <span id="who" class="chip hidden"></span>
+    <button id="sw" class="ghost sm hidden"></button>
+    <select id="lang" aria-label="Language"><option value="en">English</option><option value="ne">नेपाली</option><option value="ja">日本語</option></select>
+    <button id="theme" class="ghost sm" aria-label="Theme">◐</button>
+  </div>
+</header>
+<div id="tabs" class="tabs"><button id="t1" class="sm"></button><button id="t2" class="ghost sm"></button></div>
+<main id="main" class="one tab-p"><div id="left"></div><aside id="side" class="panel hidden"></aside></main>
+<script>
+const I={
+en:{app:"Kaigo tutor for caregiving in Japan",who:"Who is learning?",newst:"New student",name:"Your name",start:"Start",back:"Back",next:"Next",submit:"Submit",
+ sw:"Switch",place:"Placement test",qof:"Question {i} of {n}",pickone:"Pick one answer.",lvl:"Your level",score:"Score",home:"Welcome back, {n}",
+ go:"Start practice",resume:"Continue session",why_w:"Chosen because this is a weak spot.",why_l:"Chosen because you have practised it least.",vocab:"Key words",
+ ph:"Type your answer in English, Nepali or Japanese…",send:"Send answer",check:"Checking your answer…",think:"Think about it",you:"You",exit:"Leave session",
+ done:"Session complete",avg:"Average score",again:"Practise again",tohome:"Home",heat:"Your skill heatmap",practised:"Practised {a} of {b} areas · average {p}%",
+ none:"No data yet. Answer a few questions.",weak:"Weak",ok:"Getting there",good:"Strong",tp:"Practice",tm:"My progress",mic:"Speak",nomic:"Voice input is not supported in this browser (try Chrome).",
+ neterr:"Cannot reach the server. Is it running?",retake:"Retake test",sk:{vocabulary:"Vocabulary",grammar:"Grammar",comprehension:"Comprehension",recall:"Recall"},conf:"Leave this session? Your answers so far are saved."},
+ne:{app:"जापानमा हेरचाह कार्यका लागि कैगो ट्यूटर",who:"को सिक्दै छ?",newst:"नयाँ विद्यार्थी",name:"तपाईंको नाम",start:"सुरु गर्नुहोस्",back:"पछाडि",next:"अर्को",submit:"बुझाउनुहोस्",
+ sw:"बदल्नुहोस्",place:"स्तर परीक्षा",qof:"प्रश्न {i} / {n}",pickone:"एउटा उत्तर छान्नुहोस्।",lvl:"तपाईंको स्तर",score:"अङ्क",home:"फेरि स्वागत छ, {n}",
+ go:"अभ्यास सुरु गर्नुहोस्",resume:"सत्र जारी राख्नुहोस्",why_w:"यो तपाईंको कमजोर क्षेत्र भएकाले छानियो।",why_l:"तपाईंले सबैभन्दा कम अभ्यास गरेकाले छानियो।",vocab:"मुख्य शब्दहरू",
+ ph:"अङ्ग्रेजी, नेपाली वा जापानीमा उत्तर लेख्नुहोस्…",send:"उत्तर पठाउनुहोस्",check:"उत्तर जाँच्दै…",think:"सोचेर हेर्नुहोस्",you:"तपाईं",exit:"सत्र छोड्नुहोस्",
+ done:"सत्र पूरा भयो",avg:"औसत अङ्क",again:"फेरि अभ्यास गर्नुहोस्",tohome:"गृहपृष्ठ",heat:"तपाईंको सीप हिटम्याप",practised:"{b} मध्ये {a} क्षेत्रमा अभ्यास · औसत {p}%",
+ none:"अहिलेसम्म डेटा छैन। केही प्रश्नको उत्तर दिनुहोस्।",weak:"कमजोर",ok:"सुधार हुँदै",good:"राम्रो",tp:"अभ्यास",tm:"मेरो प्रगति",mic:"बोल्नुहोस्",nomic:"यो ब्राउजरमा आवाज इनपुट चल्दैन (Chrome प्रयोग गर्नुहोस्)।",
+ neterr:"सर्भरसँग जोडिन सकेन। सर्भर चलिरहेको छ?",retake:"परीक्षा फेरि दिनुहोस्",sk:{vocabulary:"शब्दावली",grammar:"व्याकरण",comprehension:"बुझाइ",recall:"सम्झना"},conf:"सत्र छोड्ने? अहिलेसम्मका उत्तर सुरक्षित छन्।"},
+ja:{app:"介護のための日本語チューター",who:"だれが学びますか？",newst:"新しい学習者",name:"お名前",start:"はじめる",back:"戻る",next:"次へ",submit:"送信",
+ sw:"切り替え",place:"レベルチェック",qof:"問題 {i} / {n}",pickone:"答えを1つ選んでください。",lvl:"あなたのレベル",score:"得点",home:"おかえりなさい、{n}さん",
+ go:"練習をはじめる",resume:"続きから",why_w:"苦手な分野なので選びました。",why_l:"いちばん練習していないので選びました。",vocab:"キーワード",
+ ph:"英語・ネパール語・日本語で答えを入力…",send:"回答を送る",check:"回答を確認中…",think:"考えてみましょう",you:"あなた",exit:"セッションを終了",
+ done:"セッション完了",avg:"平均点",again:"もう一度練習",tohome:"ホーム",heat:"スキルヒートマップ",practised:"{b}分野中{a}分野を練習 · 平均{p}%",
+ none:"まだデータがありません。いくつか答えてみましょう。",weak:"苦手",ok:"もう少し",good:"得意",tp:"練習",tm:"進み具合",mic:"話す",nomic:"このブラウザでは音声入力が使えません（Chromeをお試しください）。",
+ neterr:"サーバーに接続できません。起動していますか？",retake:"もう一度テスト",sk:{vocabulary:"語彙",grammar:"文法",comprehension:"読解",recall:"記憶"},conf:"終了しますか？ここまでの回答は保存されています。"}};
+const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LS={get:(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+let lang=LS.get("xk_lang","en"),st=null,view="profiles",P=null,S=null,heat=null,busy=false,rec=null;
+const t=(k,v={})=>{let s=(I[lang][k]??I.en[k]);return typeof s==="string"?s.replace(/\{(\w+)\}/g,(_,x)=>v[x]):s};
+const L=o=>typeof o==="string"?o:(o&&(o[lang]||o.en))||"";
+async function api(path,opt={}){let r;try{r=await fetch("/api"+path,{headers:{"Content-Type":"application/json"},...opt,body:opt.body&&JSON.stringify(opt.body)})}catch{throw new Error(t("neterr"))}
+ const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(typeof j.detail==="string"?j.detail:"Error "+r.status);return j}
+const profiles=()=>LS.get("xk_profiles",[]);
+const sessKey=()=>"xk_sess_"+st.id;
+
+function chrome(){
+ document.documentElement.lang=lang==="ne"?"ne":lang;$("#lang").value=lang;
+ $("#who").classList.toggle("hidden",!st);$("#sw").classList.toggle("hidden",!st);
+ if(st){$("#who").textContent=st.name+(st.level?" · "+st.level:"");$("#sw").textContent=t("sw")}
+ $("#t1").textContent=t("tp");$("#t2").textContent=t("tm");
+ const two=!!st&&["home","practice","summary"].includes(view);
+ $("#main").classList.toggle("one",!two);$("#side").classList.toggle("hidden",!two);$("#tabs").classList.toggle("on",two);
+}
+function show(h){$("#left").innerHTML=h;chrome();renderHeat()}
+function render(){
+ ({profiles:rProfiles,placement:rPlacement,result:rResult,home:rHome,practice:rPractice,summary:rSummary}[view])()
+}
+/* ---------- profiles ---------- */
+function rProfiles(){
+ const ps=profiles();
+ show(`<div class="panel stack"><h2>${t("who")}</h2><p class="muted">${t("app")}</p>
+ <div class="plist">${ps.map(p=>`<button data-id="${p.id}"><span>${esc(p.name)}</span><span class="muted">${esc(p.level||"")}</span></button>`).join("")}</div>
+ <h2>${t("newst")}</h2><label for="nm">${t("name")}</label><input id="nm" type="text" maxlength="60" autocomplete="off">
+ <div class="err" id="e"></div><div class="row"><button id="go">${t("start")}</button></div></div>`);
+ $("#left").querySelectorAll(".plist button").forEach(b=>b.onclick=()=>pick(+b.dataset.id));
+ $("#go").onclick=async()=>{const n=$("#nm").value.trim();if(!n){$("#e").textContent=t("name");return}
+  try{const s=await api("/students",{method:"POST",body:{name:n,lang}});LS.set("xk_profiles",[...profiles(),{id:s.id,name:s.name,level:null}]);await enter(s)}catch(e){$("#e").textContent=e.message}};
+ $("#nm").onkeydown=e=>{if(e.key==="Enter")$("#go").click()};
+}
+async function pick(id){try{await enter(await api("/students/"+id))}catch(e){LS.set("xk_profiles",profiles().filter(p=>p.id!==id));rProfiles();$("#e").textContent=e.message}}
+function saveProfile(){LS.set("xk_profiles",profiles().map(p=>p.id===st.id?{...p,level:st.level,name:st.name}:p))}
+async function enter(s){
+ st=s;LS.set("xk_cur",s.id);heat=null;
+ if(s.lang!==lang)st=await api(`/students/${s.id}/lang`,{method:"PUT",body:{lang}});
+ if(!st.level){await startPlacement();return}
+ const sid=LS.get(sessKey());if(sid){try{const x=await api("/sessions/"+sid);if(x.status==="active"){loadSession(x);view="practice";render();return}}catch{}}
+ view="home";await loadHeat();render();
+}
+async function loadHeat(){try{heat=await api(`/students/${st.id}/heatmap`)}catch{}}
+/* ---------- placement ---------- */
+async function startPlacement(keep){
+ const r=await api(`/placement?student_id=${st.id}&lang=${lang}`);
+ P={qs:r.questions,ans:keep||r.questions.map(()=>null),i:0};view="placement";render();
+}
+function rPlacement(){
+ const q=P.qs[P.i],n=P.qs.length,last=P.i===n-1;
+ show(`<div class="panel stack"><h2>${t("place")}</h2><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${P.i+1}"><i style="width:${(P.i+1)/n*100}%"></i></div>
+ <div class="muted">${t("qof",{i:P.i+1,n})}</div><div style="font-size:1.1rem;font-weight:600">${esc(q.q)}</div>
+ <div role="radiogroup" aria-label="${t("pickone")}">${q.options.map((o,j)=>`<button class="opt ${P.ans[P.i]===j?"sel":""}" role="radio" aria-checked="${P.ans[P.i]===j}" data-j="${j}">${esc(o)}</button>`).join("")}</div>
+ <div class="err" id="e"></div><div class="row"><button class="ghost" id="bk" ${P.i?"":"disabled"}>← ${t("back")}</button><span class="sp"></span>
+ <button id="nx" ${P.ans[P.i]==null?"disabled":""}>${last?t("submit"):t("next")+" →"}</button></div></div>`);
+ $("#left").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{P.ans[P.i]=+b.dataset.j;rPlacement()});
+ $("#bk").onclick=()=>{P.i--;rPlacement()};
+ $("#nx").onclick=async()=>{if(!last){P.i++;return rPlacement()}
+  try{const r=await api("/placement",{method:"POST",body:{student_id:st.id,answers:P.ans}});st.level=r.level;saveProfile();P.result=r;view="result";render()}catch(e){$("#e").textContent=e.message}};
+}
+function rResult(){
+ show(`<div class="panel stack"><h2>${t("place")}</h2><div class="muted">${t("lvl")}</div><div class="big">${esc(P.result.level)}</div>
+ <div>${t("score")}: ${P.result.score} / ${P.result.total}</div><div class="row"><button id="go">${t("go")}</button><button class="ghost" id="rt">${t("retake")}</button></div></div>`);
+ $("#go").onclick=async()=>{view="home";await loadHeat();await begin()};$("#rt").onclick=()=>startPlacement();
+}
+/* ---------- home / practice ---------- */
+function rHome(){
+ const sid=LS.get(sessKey());
+ show(`<div class="panel stack"><h2>${t("home",{n:esc(st.name)})}</h2><div class="muted">${t("lvl")}: <b>${esc(st.level)}</b></div>
+ <div class="err" id="e"></div><div class="row"><button id="go">${t("go")}</button>${sid?`<button class="ghost" id="rs">${t("resume")}</button>`:""}<button class="ghost" id="rt">${t("retake")}</button></div></div>`);
+ $("#go").onclick=begin;$("#rt").onclick=()=>startPlacement();
+ if(sid)$("#rs").onclick=async()=>{try{loadSession(await api("/sessions/"+sid));view="practice";render()}catch(e){$("#e").textContent=e.message}};
+}
+function loadSession(x){S={id:x.session_id,total:x.total,topic:x.topic,q:x.question,hist:x.history.map(h=>({...h,probe:null})),reason:null,sum:[],err:""};if(x.status!=="active"){view="summary"}LS.set(sessKey(),x.status==="active"?x.session_id:null)}
+async function begin(){
+ try{const x=await api("/sessions",{method:"POST",body:{student_id:st.id}});S={id:x.session_id,total:x.total,topic:x.topic,q:x.question,hist:[],reason:x.reason,sum:[],err:""};LS.set(sessKey(),S.id);view="practice";render()}
+ catch(e){view="home";render();$("#e").textContent=e.message}
+}
+function meter(s){const c=s>=.7?"var(--strong)":s>=.4?"var(--mid)":"var(--weak)",l=s>=.7?t("good"):s>=.4?t("ok"):t("weak");
+ return `<div class="meter" role="img" aria-label="${l} ${Math.round(s*100)}%"><i style="width:${Math.max(4,s*100)}%;background:${c}"></i></div><small class="muted">${l} · ${Math.round(s*100)}%</small>`}
+function rPractice(){
+ const q=S.q,done=S.hist.length;
+ show(`<div class="panel stack"><div class="row"><h2 style="margin:0">${esc(L(S.topic.title))}</h2><span class="sp"></span><button class="ghost sm" id="ex">← ${t("exit")}</button></div>
+ <div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${S.total}" aria-valuenow="${done}"><i style="width:${done/S.total*100}%"></i></div>
+ <div class="muted">${t("qof",{i:Math.min(done+1,S.total),n:S.total})}${S.reason?` · ${t(S.reason==="weak_spot"?"why_w":"why_l")}`:""}</div>
+ <details><summary>${t("vocab")}</summary><table class="vt">${S.topic.vocab.map(v=>`<tr><td lang="ja">${esc(v.jp)}<br><small class="muted">${esc(v.reading)}</small></td><td>${esc(lang==="ne"?v.ne:v.en)}</td></tr>`).join("")}</table></details>
+ <div id="log" class="stack" aria-live="polite">${S.hist.map((h,i)=>`<div class="msg q">${esc(h.question)}</div><div class="msg a">${t("you")}: ${esc(h.answer)}</div>
+  <div class="fb">${esc(h.feedback)}${meter(h.score??0)}${h.probe&&i===S.hist.length-1&&q?`<div class="think">${t("think")}: ${esc(h.probe)}</div>`:""}</div>`).join("")}
+  ${q?`<div class="msg q" id="cur"><b>${esc(q.prompt)}</b></div>`:""}</div>
+ ${q?`<div class="sticky stack"><textarea id="ans" placeholder="${esc(t("ph"))}" aria-label="${esc(t("ph"))}" ${busy?"disabled":""}></textarea>
+ <div class="err" id="e">${esc(S.err)}</div><div class="row"><button id="send" ${busy?"disabled":""}>${busy?t("check"):t("send")}</button><button class="ghost" id="mic" aria-label="${t("mic")}">🎤 ${t("mic")}</button></div></div>`:""}</div>`);
+ $("#ex").onclick=()=>{if(confirm(t("conf"))){view="home";render()}};
+ if(q){$("#send").onclick=send;$("#mic").onclick=mic;
+  $("#ans").onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}};if(!busy)$("#ans").focus();
+  (document.getElementById("cur")||{scrollIntoView(){}}).scrollIntoView({block:"nearest"})}
+}
+async function send(){
+ const a=$("#ans").value.trim();if(!a||busy)return;busy=true;S.err="";const keep=a;rPractice();$("#ans").value=keep;
+ try{const r=await api(`/sessions/${S.id}/answer`,{method:"POST",body:{answer:a}});
+  S.hist.push({question:S.q.prompt,answer:a,feedback:r.feedback,score:r.score,probe:r.probe});S.sum.push(r.score);S.q=r.next_question;heat=r.heatmap;
+  busy=false;if(r.session_done){LS.set(sessKey(),null);st.lastDone=true;view="summary"}render();
+ }catch(e){busy=false;S.err=e.message;rPractice();$("#ans").value=keep}
+}
+function mic(){
+ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$("#e").textContent=t("nomic");return}
+ if(rec){rec.stop();return}
+ rec=new SR();rec.lang={en:"en-US",ne:"ne-NP",ja:"ja-JP"}[lang];rec.interimResults=false;
+ rec.onresult=e=>{$("#ans").value=($("#ans").value+" "+e.results[0][0].transcript).trim()};
+ rec.onerror=e=>{$("#e").textContent=t("nomic")+" ("+e.error+")"};rec.onend=()=>{rec=null;const m=$("#mic");if(m)m.textContent="🎤 "+t("mic")};
+ rec.start();$("#mic").textContent="⏹";
+}
+function rSummary(){
+ const sc=S.hist.map(h=>h.score??0),avg=sc.length?sc.reduce((a,b)=>a+b,0)/sc.length:0;
+ show(`<div class="panel stack"><h2>${t("done")} ✓</h2><div class="muted">${esc(L(S.topic.title))} · ${t("avg")}</div><div class="big">${Math.round(avg*100)}%</div>${meter(avg)}
+ ${S.hist.map(h=>`<div class="msg q">${esc(h.question)}</div><div class="msg a">${esc(h.answer)}</div>`).join("")}
+ <div class="row"><button id="go">${t("again")}</button><button class="ghost" id="hm">${t("tohome")}</button></div></div>`);
+ $("#go").onclick=begin;$("#hm").onclick=()=>{view="home";render()};
+}
+/* ---------- heatmap ---------- */
+function renderHeat(){
+ const side=$("#side");if(!st||!["home","practice","summary"].includes(view)){return}
+ if(!heat){side.innerHTML=`<h2>${t("heat")}</h2><p class="muted">${t("none")}</p>`;return}
+ let used=0,sum=0,cells=0;
+ const rows=heat.topics.map(tp=>`<tr><th scope="row">${esc(L(tp.title))}</th>${heat.skills.map(s=>{const c=heat.cells[tp.id][s],name=t("sk")[s]||s;cells++;
+  if(!c)return `<td class="n" tabindex="0" aria-label="${esc(L(tp.title))}, ${name}: –">–</td>`;used++;sum+=c.avg;const p=Math.round(c.avg*100),bg=c.avg>=.7?"var(--strong)":c.avg>=.4?"#9a6f0f":"var(--weak)";
+  return `<td tabindex="0" style="background:${bg}" title="${name}: ${p}% (${c.n})" aria-label="${esc(L(tp.title))}, ${name}: ${p}%">${p}</td>`}).join("")}</tr>`).join("");
+ side.innerHTML=`<h2>${t("heat")}</h2><div class="muted" style="margin-bottom:8px">${used?t("practised",{a:used,b:cells,p:Math.round(sum/used*100)}):t("none")}</div>
+ <div style="overflow-x:auto"><table class="hm"><thead><tr><th></th>${heat.skills.map(s=>`<th>${esc((t("sk")[s]||s).slice(0,lang==="en"?5:3))}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+/* ---------- boot ---------- */
+$("#lang").onchange=async e=>{lang=e.target.value;LS.set("xk_lang",lang);
+ try{if(st)st=await api(`/students/${st.id}/lang`,{method:"PUT",body:{lang}});
+  if(view==="placement")await startPlacement(P.ans.slice());
+  else if(view==="practice"&&S){const x=await api("/sessions/"+S.id);const old=S;loadSession(x);S.reason=old.reason;view="practice";render()}
+  else render()}catch(err){render()}};
+$("#theme").onclick=()=>{const d=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=d;LS.set("xk_theme",d)};
+$("#sw").onclick=()=>{st=null;S=null;P=null;view="profiles";LS.set("xk_cur",null);render()};
+$("#t1").onclick=()=>{$("#main").className=$("#main").className.replace(/tab-\w/,"tab-p");$("#t1").classList.remove("ghost");$("#t2").classList.add("ghost")};
+$("#t2").onclick=()=>{$("#main").className=$("#main").className.replace(/tab-\w/,"tab-m");$("#t2").classList.remove("ghost");$("#t1").classList.add("ghost")};
+document.documentElement.dataset.theme=LS.get("xk_theme",matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+(async()=>{const id=LS.get("xk_cur");if(id){try{await enter(await api("/students/"+id));return}catch(e){}}render()})();
+</script>
+</body>
+</html>

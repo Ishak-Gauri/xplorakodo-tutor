@@ -1,0 +1,435 @@
+{
+ "levels": [
+  {
+   "min": 0,
+   "level": "N5-Foundation"
+  },
+  {
+   "min": 5,
+   "level": "N5"
+  },
+  {
+   "min": 9,
+   "level": "N4-Ready"
+  }
+ ],
+ "per_test": 10,
+ "items": [
+  {
+   "q": {
+    "en": "What does ありがとう mean?",
+    "ne": "ありがとう को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Thank you",
+     "ne": "धन्यवाद"
+    },
+    {
+     "en": "Sorry",
+     "ne": "माफ गर्नुहोस्"
+    },
+    {
+     "en": "Hello",
+     "ne": "नमस्ते"
+    },
+    {
+     "en": "Goodbye",
+     "ne": "बिदा"
+    }
+   ],
+   "answer": 0
+  },
+  {
+   "q": {
+    "en": "What does はい mean?",
+    "ne": "はい को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "No",
+     "ne": "होइन"
+    },
+    {
+     "en": "Yes",
+     "ne": "हो"
+    },
+    {
+     "en": "Maybe",
+     "ne": "सायद"
+    },
+    {
+     "en": "Please",
+     "ne": "कृपया"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "What does 水 (みず) mean?",
+    "ne": "水 (みず) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Fire",
+     "ne": "आगो"
+    },
+    {
+     "en": "Water",
+     "ne": "पानी"
+    },
+    {
+     "en": "Tree",
+     "ne": "रुख"
+    },
+    {
+     "en": "Mountain",
+     "ne": "पहाड"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "Which sentence means 'I am a student'?",
+    "ne": "कुन वाक्यको अर्थ 'म विद्यार्थी हुँ' हो?"
+   },
+   "options": [
+    "私は学生です",
+    "私は先生です",
+    "私は医者です",
+    "私は友達です"
+   ],
+   "answer": 0
+  },
+  {
+   "q": {
+    "en": "What does 食べます (たべます) mean?",
+    "ne": "食べます (たべます) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "To drink",
+     "ne": "पिउनु"
+    },
+    {
+     "en": "To eat",
+     "ne": "खानु"
+    },
+    {
+     "en": "To go",
+     "ne": "जानु"
+    },
+    {
+     "en": "To sleep",
+     "ne": "सुत्नु"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "Which number is 三?",
+    "ne": "三 कुन संख्या हो?"
+   },
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "What is 病院 (びょういん)?",
+    "ne": "病院 (びょういん) के हो?"
+   },
+   "options": [
+    {
+     "en": "School",
+     "ne": "विद्यालय"
+    },
+    {
+     "en": "Hospital",
+     "ne": "अस्पताल"
+    },
+    {
+     "en": "Station",
+     "ne": "स्टेसन"
+    },
+    {
+     "en": "Bank",
+     "ne": "बैंक"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "Which means 'Please wait'?",
+    "ne": "'कृपया पर्खनुहोस्' कुन हो?"
+   },
+   "options": [
+    "待ってください",
+    "待て",
+    "待たない",
+    "待った"
+   ],
+   "answer": 0
+  },
+  {
+   "q": {
+    "en": "When do you say お願いします?",
+    "ne": "お願いします कहिले भनिन्छ?"
+   },
+   "options": [
+    {
+     "en": "Asking politely for something",
+     "ne": "केही नम्रतापूर्वक मागदा"
+    },
+    {
+     "en": "Saying goodbye",
+     "ne": "बिदा हुँदा"
+    },
+    {
+     "en": "Apologizing",
+     "ne": "माफी माग्दा"
+    },
+    {
+     "en": "Counting",
+     "ne": "गन्ती गर्दा"
+    }
+   ],
+   "answer": 0
+  },
+  {
+   "q": {
+    "en": "Which particle marks the destination: 日本＿行きます?",
+    "ne": "गन्तव्य जनाउने कण कुन हो: 日本＿行きます?"
+   },
+   "options": [
+    "を",
+    "へ",
+    "が",
+    "の"
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "What does 先生 (せんせい) mean?",
+    "ne": "先生 (せんせい) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Student",
+     "ne": "विद्यार्थी"
+    },
+    {
+     "en": "Teacher",
+     "ne": "शिक्षक"
+    },
+    {
+     "en": "Friend",
+     "ne": "साथी"
+    },
+    {
+     "en": "Nurse",
+     "ne": "नर्स"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "What does 薬 (くすり) mean?",
+    "ne": "薬 (くすり) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Shoes",
+     "ne": "जुत्ता"
+    },
+    {
+     "en": "Rice",
+     "ne": "भात"
+    },
+    {
+     "en": "Medicine",
+     "ne": "औषधि"
+    },
+    {
+     "en": "Water",
+     "ne": "पानी"
+    }
+   ],
+   "answer": 2
+  },
+  {
+   "q": {
+    "en": "Which number is 五?",
+    "ne": "五 कुन संख्या हो?"
+   },
+   "options": [
+    "3",
+    "4",
+    "6",
+    "5"
+   ],
+   "answer": 3
+  },
+  {
+   "q": {
+    "en": "What does 痛い (いたい) mean?",
+    "ne": "痛い (いたい) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Happy",
+     "ne": "खुसी"
+    },
+    {
+     "en": "Painful",
+     "ne": "दुखेको"
+    },
+    {
+     "en": "Tired",
+     "ne": "थकित"
+    },
+    {
+     "en": "Cold",
+     "ne": "चिसो"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "Which is the polite way to say 'Good morning'?",
+    "ne": "'शुभ प्रभात' भन्ने नम्र तरिका कुन हो?"
+   },
+   "options": [
+    "おやすみなさい",
+    "さようなら",
+    "おはようございます",
+    "ただいま"
+   ],
+   "answer": 2
+  },
+  {
+   "q": {
+    "en": "What does 熱 (ねつ) mean when someone is sick?",
+    "ne": "बिरामी हुँदा 熱 (ねつ) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Rain",
+     "ne": "वर्षा"
+    },
+    {
+     "en": "Fever",
+     "ne": "ज्वरो"
+    },
+    {
+     "en": "Hunger",
+     "ne": "भोक"
+    },
+    {
+     "en": "Sleep",
+     "ne": "निद्रा"
+    }
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "What does 手伝います (てつだいます) mean?",
+    "ne": "手伝います (てつだいます) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "I will run",
+     "ne": "म दौडन्छु"
+    },
+    {
+     "en": "I will wait",
+     "ne": "म पर्खन्छु"
+    },
+    {
+     "en": "I will help",
+     "ne": "म सहयोग गर्छु"
+    },
+    {
+     "en": "I will read",
+     "ne": "म पढ्छु"
+    }
+   ],
+   "answer": 2
+  },
+  {
+   "q": {
+    "en": "What is トイレ?",
+    "ne": "トイレ के हो?"
+   },
+   "options": [
+    {
+     "en": "Kitchen",
+     "ne": "भान्सा"
+    },
+    {
+     "en": "Bed",
+     "ne": "ओछ्यान"
+    },
+    {
+     "en": "Door",
+     "ne": "ढोका"
+    },
+    {
+     "en": "Toilet",
+     "ne": "शौचालय"
+    }
+   ],
+   "answer": 3
+  },
+  {
+   "q": {
+    "en": "Which particle marks the object: 水＿飲みます?",
+    "ne": "वस्तु जनाउने कण कुन हो: 水＿飲みます?"
+   },
+   "options": [
+    "に",
+    "を",
+    "で",
+    "と"
+   ],
+   "answer": 1
+  },
+  {
+   "q": {
+    "en": "What does 危ない (あぶない) mean?",
+    "ne": "危ない (あぶない) को अर्थ के हो?"
+   },
+   "options": [
+    {
+     "en": "Delicious",
+     "ne": "स्वादिलो"
+    },
+    {
+     "en": "Dangerous",
+     "ne": "खतरनाक"
+    },
+    {
+     "en": "Heavy",
+     "ne": "भारी"
+    },
+    {
+     "en": "Quiet",
+     "ne": "शान्त"
+    }
+   ],
+   "answer": 1
+  }
+ ]
+}

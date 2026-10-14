@@ -1,0 +1,1032 @@
+{
+ "track": "caregiving",
+ "target_level": "N5",
+ "skills": [
+  "vocabulary",
+  "grammar",
+  "comprehension",
+  "recall"
+ ],
+ "topics": [
+  {
+   "id": "basic_nursing",
+   "title": {
+    "en": "Basic nursing",
+    "ne": "आधारभूत नर्सिङ",
+    "ja": "基本的な看護"
+   },
+   "vocab": [
+    {
+     "jp": "体調",
+     "reading": "たいちょう",
+     "ne": "शारीरिक अवस्था",
+     "en": "physical condition"
+    },
+    {
+     "jp": "血圧",
+     "reading": "けつあつ",
+     "ne": "रक्तचाप",
+     "en": "blood pressure"
+    },
+    {
+     "jp": "体温",
+     "reading": "たいおん",
+     "ne": "शरीरको तापक्रम",
+     "en": "body temperature"
+    }
+   ],
+   "questions": [
+    {
+     "id": "bn1",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "Staff in Japanese care homes ask about a resident's 体調 (たいちょう). What does 体調 mean?",
+      "ne": "जापानका हेरचाह केन्द्रहरूमा कर्मचारीले बासिन्दाको 体調 (たいちょう) बारे सोध्छन्। 体調 को अर्थ के हो?",
+      "ja": "介護施設のスタッフは入居者の「体調」についてよく聞きます。「体調」はどういう意味ですか？"
+     },
+     "keywords": [
+      [
+       "condition",
+       "health",
+       "feeling",
+       "feel",
+       "अवस्था",
+       "स्वास्थ्य",
+       "तबियत",
+       "調子"
+      ]
+     ],
+     "model_answer": {
+      "en": "体調 means physical condition: how the person's body is feeling today.",
+      "ne": "体調 को अर्थ शारीरिक अवस्था हो: आज व्यक्तिको शरीर कस्तो महसुस भइरहेको छ।",
+      "ja": "体調とは、その日の体の具合のことです。"
+     },
+     "probe": {
+      "en": "Why would a caregiver ask about 体調 before starting the morning routine?",
+      "ne": "बिहानको दिनचर्या सुरु गर्नुअघि केयरगिभरले किन 体調 सोध्छ?",
+      "ja": "朝のケアを始める前に、なぜ体調を聞くのですか？"
+     }
+    },
+    {
+     "id": "bn2",
+     "skill": "comprehension",
+     "prompt": {
+      "en": "A resident says 頭が痛いです (あたまがいたいです). What is the problem, and what should the caregiver do first?",
+      "ne": "बासिन्दाले 頭が痛いです भन्छन्। समस्या के हो र केयरगिभरले सबैभन्दा पहिले के गर्नुपर्छ?",
+      "ja": "入居者が「頭が痛いです」と言いました。どんな問題ですか。介護士は最初に何をしますか？"
+     },
+     "keywords": [
+      [
+       "headache",
+       "head",
+       "pain",
+       "ache",
+       "टाउको",
+       "दुख",
+       "頭",
+       "痛"
+      ],
+      [
+       "report",
+       "tell",
+       "nurse",
+       "supervisor",
+       "check",
+       "ask",
+       "measure",
+       "सूचना",
+       "नर्स",
+       "बताउ",
+       "報告",
+       "看護"
+      ]
+     ],
+     "model_answer": {
+      "en": "The resident has a headache. First, ask about it and report to the nurse or supervisor.",
+      "ne": "बासिन्दालाई टाउको दुखेको छ। पहिले सोध्नुहोस् र नर्स वा सुपरभाइजरलाई जानकारी दिनुहोस्।",
+      "ja": "頭痛です。まず様子を聞き、看護師か上司に報告します。"
+     },
+     "probe": {
+      "en": "What could go wrong if the caregiver just waits and says nothing?",
+      "ne": "केयरगिभरले केही नबोली पर्खियो भने के बिग्रन सक्छ?",
+      "ja": "何も言わずに待っていたら、どんな問題が起こりますか？"
+     }
+    },
+    {
+     "id": "bn3",
+     "skill": "recall",
+     "prompt": {
+      "en": "Name two vital signs a caregiver measures, one of them blood pressure.",
+      "ne": "केयरगिभरले नाप्ने दुई vital sign (शरीरका सङ्केत) भन्नुहोस्, एउटा रक्तचाप हुनुपर्छ।",
+      "ja": "介護士が測るバイタルサインを2つ答えてください。1つは血圧です。"
+     },
+     "keywords": [
+      [
+       "blood pressure",
+       "血圧",
+       "रक्तचाप",
+       "bp"
+      ],
+      [
+       "temperature",
+       "pulse",
+       "heart rate",
+       "breathing",
+       "respiration",
+       "体温",
+       "脈",
+       "तापक्रम",
+       "नाडी",
+       "fever"
+      ]
+     ],
+     "model_answer": {
+      "en": "Blood pressure (血圧) and body temperature (体温); pulse and breathing also count.",
+      "ne": "रक्तचाप (血圧) र शरीरको तापक्रम (体温); नाडी र श्वासप्रश्वास पनि मान्य हुन्छ।",
+      "ja": "血圧と体温です。脈拍や呼吸も正解です。"
+     },
+     "probe": {
+      "en": "Which of these would you re-check first if a resident looks pale?",
+      "ne": "बासिन्दा फिक्का देखिए कुन कुरा पहिले फेरि जाँच्नुहुन्छ?",
+      "ja": "入居者の顔色が悪いとき、まず何をもう一度確認しますか？"
+     }
+    },
+    {
+     "id": "bn4",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "A nurse says 脈 (みゃく) を測ります. What is being measured?",
+      "ne": "नर्सले 脈 (みゃく) を測ります भन्छिन्। के नापिँदै छ?",
+      "ja": "看護師が「脈を測ります」と言いました。何を測りますか？"
+     },
+     "keywords": [
+      [
+       "pulse",
+       "heartbeat",
+       "heart rate",
+       "heart beat",
+       "नाडी",
+       "धड्कन",
+       "脈拍"
+      ]
+     ],
+     "model_answer": {
+      "en": "脈 is the pulse: the heartbeat you can feel at the wrist.",
+      "ne": "脈 को अर्थ नाडी हो: नाडीमा महसुस हुने मुटुको धड्कन।",
+      "ja": "脈は脈拍のことで、手首で感じる心臓の拍動です。"
+     },
+     "probe": {
+      "en": "Where on the body can you feel it most easily?",
+      "ne": "यो शरीरको कुन ठाउँमा सजिलै महसुस गर्न सकिन्छ?",
+      "ja": "体のどこで一番感じやすいですか？"
+     }
+    },
+    {
+     "id": "bn5",
+     "skill": "grammar",
+     "prompt": {
+      "en": "Which is polite to ask a resident: 痛いですか or 痛いか? Say why.",
+      "ne": "बासिन्दालाई सोध्न कुन नम्र छ: 痛いですか कि 痛いか? किन?",
+      "ja": "入居者に聞くとき、丁寧なのは「痛いですか」と「痛いか」のどちらですか？理由も答えてください。"
+     },
+     "keywords": [
+      [
+       "痛いですか",
+       "いたいですか",
+       "itaidesuka",
+       "itai desu ka",
+       "desu ka",
+       "first",
+       "former",
+       "です"
+      ],
+      [
+       "polite",
+       "respect",
+       "kind",
+       "command",
+       "rude",
+       "blunt",
+       "casual",
+       "impolite",
+       "आदेश",
+       "सम्मान",
+       "नम्र",
+       "अशिष्ट",
+       "丁寧",
+       "命令",
+       "失礼"
+      ]
+     ],
+     "model_answer": {
+      "en": "痛いですか is polite (it ends with です); 痛いか is blunt and casual.",
+      "ne": "痛いですか नम्र हो (です ले अन्त्य हुन्छ); 痛いか सिधा र अनौपचारिक हो।",
+      "ja": "「痛いですか」は丁寧な言い方で、「痛いか」はぞんざいな言い方です。"
+     },
+     "probe": {
+      "en": "After 痛いですか, what is your next question?",
+      "ne": "痛いですか पछि तपाईंको अर्को प्रश्न के हुन्छ?",
+      "ja": "「痛いですか」のあと、次に何と聞きますか？"
+     }
+    },
+    {
+     "id": "bn6",
+     "skill": "comprehension",
+     "prompt": {
+      "en": "A resident's temperature reads 38.5°C. What does this mean and what should you do?",
+      "ne": "बासिन्दाको तापक्रम 38.5°C छ। यसको अर्थ के हो र तपाईंले के गर्नुपर्छ?",
+      "ja": "入居者の体温が38.5度です。どういう状態で、どうしますか？"
+     },
+     "keywords": [
+      [
+       "fever",
+       "high temperature",
+       "high temp",
+       "hot",
+       "febrile",
+       "ज्वरो",
+       "ज्वरा",
+       "熱"
+      ],
+      [
+       "report",
+       "tell",
+       "inform",
+       "nurse",
+       "supervisor",
+       "record",
+       "सूचना",
+       "जानकारी",
+       "नर्स",
+       "報告",
+       "看護"
+      ]
+     ],
+     "model_answer": {
+      "en": "38.5°C is a fever. Report to the nurse and record it.",
+      "ne": "38.5°C ज्वरो हो। नर्सलाई जानकारी दिनुहोस् र अभिलेख राख्नुहोस्।",
+      "ja": "38.5度は発熱です。看護師に報告して記録します。"
+     },
+     "probe": {
+      "en": "What else would you watch for besides the number?",
+      "ne": "संख्याबाहेक अरू के कुरा ध्यान दिएर हेर्नुहुन्छ?",
+      "ja": "数字のほかに、何に気をつけて見ますか？"
+     }
+    }
+   ]
+  },
+  {
+   "id": "elder_care",
+   "title": {
+    "en": "Elder care",
+    "ne": "वृद्ध हेरचाह",
+    "ja": "高齢者ケア"
+   },
+   "vocab": [
+    {
+     "jp": "食事",
+     "reading": "しょくじ",
+     "ne": "खाना / भोजन",
+     "en": "meal"
+    },
+    {
+     "jp": "手伝います",
+     "reading": "てつだいます",
+     "ne": "सहयोग गर्छु",
+     "en": "I will help"
+    },
+    {
+     "jp": "移乗",
+     "reading": "いじょう",
+     "ne": "सारेर बसाउने (transfer)",
+     "en": "transfer (bed to chair)"
+    }
+   ],
+   "questions": [
+    {
+     "id": "ec1",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "What does 食事 (しょくじ) mean?",
+      "ne": "食事 (しょくじ) को अर्थ के हो?",
+      "ja": "「食事」の意味を説明してください。"
+     },
+     "keywords": [
+      [
+       "meal",
+       "food",
+       "eating",
+       "खाना",
+       "भोजन",
+       "食"
+      ]
+     ],
+     "model_answer": {
+      "en": "食事 means a meal, or eating.",
+      "ne": "食事 को अर्थ खाना वा भोजन गर्नु हो।",
+      "ja": "食事は、ごはんを食べることです。"
+     },
+     "probe": {
+      "en": "Which care tasks are connected to 食事?",
+      "ne": "खानासँग सम्बन्धित हेरचाहका कामहरू कुन कुन हुन्?",
+      "ja": "食事に関係するケアにはどんなものがありますか？"
+     }
+    },
+    {
+     "id": "ec2",
+     "skill": "grammar",
+     "prompt": {
+      "en": "Which sounds polite to a resident: 手伝いましょうか or 手伝え? Say why.",
+      "ne": "बासिन्दालाई कुन तरिका नम्र छ: 手伝いましょうか कि 手伝え? किन?",
+      "ja": "入居者に丁寧なのは「手伝いましょうか」と「手伝え」のどちらですか？理由も答えてください。"
+     },
+     "keywords": [
+      [
+       "手伝いましょうか",
+       "てつだいましょうか",
+       "tetsudaimashouka",
+       "tetsudaimashoka",
+       "ましょうか",
+       "first",
+       "former"
+      ],
+      [
+       "polite",
+       "respect",
+       "kind",
+       "command",
+       "rude",
+       "impolite",
+       "आदेश",
+       "सम्मान",
+       "नम्र",
+       "丁寧"
+      ]
+     ],
+     "model_answer": {
+      "en": "手伝いましょうか is polite (an offer); 手伝え is a rude command.",
+      "ne": "手伝いましょうか नम्र हो (प्रस्ताव); 手伝え अशिष्ट आदेश हो।",
+      "ja": "「手伝いましょうか」は丁寧な申し出で、「手伝え」は失礼な命令です。"
+     },
+     "probe": {
+      "en": "How would you offer help with 食事 using the same pattern?",
+      "ne": "त्यही ढाँचा प्रयोग गरेर खानामा सहयोग कसरी प्रस्ताव गर्ने?",
+      "ja": "同じ形で、食事の手伝いを申し出るには何と言いますか？"
+     }
+    },
+    {
+     "id": "ec3",
+     "skill": "comprehension",
+     "prompt": {
+      "en": "A resident refuses to eat lunch. Give two things a caregiver should do.",
+      "ne": "बासिन्दाले खाना खान मानेनन्। केयरगिभरले गर्नुपर्ने दुई कुरा भन्नुहोस्।",
+      "ja": "入居者が昼ごはんを食べたがりません。介護士がすべきことを2つ答えてください。"
+     },
+     "keywords": [
+      [
+       "ask",
+       "why",
+       "listen",
+       "reason",
+       "कारण",
+       "सोध"
+      ],
+      [
+       "report",
+       "nurse",
+       "record",
+       "tell",
+       "note",
+       "सूचना",
+       "नर्स"
+      ]
+     ],
+     "model_answer": {
+      "en": "Ask gently why and listen, then report to the nurse and record it.",
+      "ne": "विनम्रतापूर्वक कारण सोध्नुहोस् र सुन्नुहोस्, अनि नर्सलाई जानकारी दिनुहोस् र अभिलेख राख्नुहोस्।",
+      "ja": "やさしく理由を聞いて耳を傾け、看護師に報告して記録します。"
+     },
+     "probe": {
+      "en": "What reasons might a resident have that you could not see at first?",
+      "ne": "सुरुमा नदेखिने कस्ता कारण बासिन्दासँग हुन सक्छन्?",
+      "ja": "すぐには分からない理由として、どんなことが考えられますか？"
+     }
+    },
+    {
+     "id": "ec4",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "What does 車椅子 (くるまいす) mean?",
+      "ne": "車椅子 (くるまいす) को अर्थ के हो?",
+      "ja": "「車椅子」とは何ですか？説明してください。"
+     },
+     "keywords": [
+      [
+       "wheelchair",
+       "wheel chair",
+       "व्हीलचेयर",
+       "ह्वीलचेयर",
+       "ह्विलचेयर",
+       "पाङ्ग्रे",
+       "車いす"
+      ]
+     ],
+     "model_answer": {
+      "en": "車椅子 is a wheelchair.",
+      "ne": "車椅子 को अर्थ ह्वीलचेयर हो।",
+      "ja": "車椅子は、座ったまま移動するための、車輪のついたいすです。"
+     },
+     "probe": {
+      "en": "What must you check before moving a resident in one?",
+      "ne": "बासिन्दालाई त्यसमा सार्नुअघि के जाँच्नुपर्छ?",
+      "ja": "車椅子で移動する前に、何を確認しますか？"
+     }
+    },
+    {
+     "id": "ec5",
+     "skill": "grammar",
+     "prompt": {
+      "en": "Which is polite: 気をつけてください or 気をつけろ? Say why.",
+      "ne": "कुन नम्र छ: 気をつけてください कि 気をつけろ? किन?",
+      "ja": "丁寧なのは「気をつけてください」と「気をつけろ」のどちらですか？理由も答えてください。"
+     },
+     "keywords": [
+      [
+       "気をつけてください",
+       "きをつけてください",
+       "kiwotsukete kudasai",
+       "kudasai",
+       "first",
+       "former",
+       "てください"
+      ],
+      [
+       "polite",
+       "respect",
+       "kind",
+       "command",
+       "rude",
+       "blunt",
+       "casual",
+       "impolite",
+       "आदेश",
+       "सम्मान",
+       "नम्र",
+       "अशिष्ट",
+       "丁寧",
+       "命令",
+       "失礼"
+      ]
+     ],
+     "model_answer": {
+      "en": "気をつけてください is polite (a request); 気をつけろ is a rough command.",
+      "ne": "気をつけてください नम्र अनुरोध हो; 気をつけろ कडा आदेश हो।",
+      "ja": "「気をつけてください」は丁寧な依頼で、「気をつけろ」は乱暴な命令です。"
+     },
+     "probe": {
+      "en": "When would you say it to a resident?",
+      "ne": "तपाईं यो बासिन्दालाई कहिले भन्नुहुन्छ?",
+      "ja": "どんなときに入居者にそう言いますか？"
+     }
+    },
+    {
+     "id": "ec6",
+     "skill": "recall",
+     "prompt": {
+      "en": "Name two daily tasks caregivers help residents with. One of them is 食事 (meals).",
+      "ne": "केयरगिभरले बासिन्दालाई गर्ने दुई दैनिक कामको नाम भन्नुहोस्। एउटा 食事 (खाना) हुनुपर्छ।",
+      "ja": "介護士が入居者を手伝う毎日の仕事を2つ答えてください。1つは食事です。"
+     },
+     "keywords": [
+      [
+       "meal",
+       "food",
+       "eating",
+       "खाना",
+       "भोजन",
+       "食事",
+       "ごはん"
+      ],
+      [
+       "bath",
+       "bathing",
+       "toilet",
+       "dress",
+       "clothes",
+       "move",
+       "transfer",
+       "walk",
+       "sleep",
+       "नुहा",
+       "शौचालय",
+       "लुगा",
+       "हिँड",
+       "入浴",
+       "風呂",
+       "トイレ",
+       "着替",
+       "移乗"
+      ]
+     ],
+     "model_answer": {
+      "en": "Meals (食事) plus bathing (入浴), toilet help, dressing or moving.",
+      "ne": "खाना (食事) र नुहाउने (入浴), शौचालय सहयोग, लुगा लगाउने वा सार्ने काम।",
+      "ja": "食事と、入浴・トイレ・着替え・移動などの手伝いです。"
+     },
+     "probe": {
+      "en": "Which of these needs the most privacy and respect?",
+      "ne": "यीमध्ये कुन काममा सबैभन्दा बढी गोपनीयता र सम्मान चाहिन्छ?",
+      "ja": "どの介助が一番プライバシーと敬意が必要ですか？"
+     }
+    }
+   ]
+  },
+  {
+   "id": "hygiene",
+   "title": {
+    "en": "Hygiene",
+    "ne": "सरसफाइ",
+    "ja": "衛生"
+   },
+   "vocab": [
+    {
+     "jp": "手洗い",
+     "reading": "てあらい",
+     "ne": "हात धुने",
+     "en": "hand washing"
+    },
+    {
+     "jp": "消毒",
+     "reading": "しょうどく",
+     "ne": "कीटाणुनाशन",
+     "en": "disinfection"
+    },
+    {
+     "jp": "入浴",
+     "reading": "にゅうよく",
+     "ne": "नुहाउने",
+     "en": "bathing"
+    }
+   ],
+   "questions": [
+    {
+     "id": "hy1",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "What is 手洗い (てあらい)?",
+      "ne": "手洗い (てあらい) भनेको के हो?",
+      "ja": "「手洗い」とは何ですか？説明してください。"
+     },
+     "keywords": [
+      [
+       "hand washing",
+       "wash hands",
+       "washing hands",
+       "wash your hands",
+       "hand wash",
+       "हात धुन",
+       "手を洗"
+      ]
+     ],
+     "model_answer": {
+      "en": "手洗い is hand washing.",
+      "ne": "手洗い भनेको हात धुने काम हो।",
+      "ja": "手洗いは、手を洗うことです。"
+     },
+     "probe": {
+      "en": "Why is it the single most repeated habit in a care home?",
+      "ne": "हेरचाह केन्द्रमा यो सबैभन्दा धेरै दोहोरिने बानी किन हो?",
+      "ja": "なぜ介護施設で一番くり返される習慣なのですか？"
+     }
+    },
+    {
+     "id": "hy2",
+     "skill": "recall",
+     "prompt": {
+      "en": "Name two moments when a caregiver must wash their hands.",
+      "ne": "केयरगिभरले कुन दुई समयमा हात धुनुपर्छ?",
+      "ja": "介護士が手を洗わなければならない場面を2つ答えてください。"
+     },
+     "keywords": [
+      [
+       "before",
+       "after",
+       "पहिले",
+       "पछि",
+       "前",
+       "後"
+      ],
+      [
+       "meal",
+       "eating",
+       "food",
+       "toilet",
+       "bathroom",
+       "gloves",
+       "resident",
+       "contact",
+       "खाना",
+       "शौचालय",
+       "दिसा"
+      ]
+     ],
+     "model_answer": {
+      "en": "Before meals and after toilet care (also before and after touching a resident, and after removing gloves).",
+      "ne": "खाना अघि र शौचालय हेरचाह पछि (बासिन्दालाई छुनुअघि/पछि र पञ्जा हटाएपछि पनि)।",
+      "ja": "食事の前と、トイレ介助の後です。入居者に触れる前後や手袋を外した後も正解です。"
+     },
+     "probe": {
+      "en": "Which of these moments is easiest to forget when you are rushed?",
+      "ne": "हतारमा हुँदा यीमध्ये कुन समय बिर्सन सबैभन्दा सजिलो हुन्छ?",
+      "ja": "忙しいとき、どの場面を一番忘れやすいですか？"
+     }
+    },
+    {
+     "id": "hy3",
+     "skill": "comprehension",
+     "prompt": {
+      "en": "What is 消毒 (しょうどく) used for?",
+      "ne": "消毒 (しょうどく) के का लागि प्रयोग गरिन्छ?",
+      "ja": "「消毒」は何のために使いますか？"
+     },
+     "keywords": [
+      [
+       "disinfect",
+       "sterilize",
+       "sterilise",
+       "kill germs",
+       "germs",
+       "bacteria",
+       "infection",
+       "कीटाणु",
+       "संक्रमण",
+       "菌"
+      ]
+     ],
+     "model_answer": {
+      "en": "消毒 is disinfection: killing germs to prevent infection.",
+      "ne": "消毒 भनेको कीटाणुनाशन हो: संक्रमण रोक्न कीटाणु मार्ने।",
+      "ja": "消毒は、菌を殺して感染を防ぐことです。"
+     },
+     "probe": {
+      "en": "What should be disinfected between two residents?",
+      "ne": "दुई बासिन्दाबीच के के कीटाणुरहित गर्नुपर्छ?",
+      "ja": "入居者が変わるとき、何を消毒すべきですか？"
+     }
+    },
+    {
+     "id": "hy4",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "What does 入浴 (にゅうよく) mean?",
+      "ne": "入浴 (にゅうよく) को अर्थ के हो?",
+      "ja": "「入浴」とは何ですか？説明してください。"
+     },
+     "keywords": [
+      [
+       "bath",
+       "bathing",
+       "taking a bath",
+       "wash",
+       "नुहा",
+       "नुहाउने",
+       "お風呂",
+       "風呂"
+      ]
+     ],
+     "model_answer": {
+      "en": "入浴 is bathing.",
+      "ne": "入浴 को अर्थ नुहाउनु हो।",
+      "ja": "入浴は、おふろに入ることです。"
+     },
+     "probe": {
+      "en": "What do you check before a resident gets into the bath?",
+      "ne": "बासिन्दा नुहाउन जानुअघि के जाँच्नुहुन्छ?",
+      "ja": "入浴の前に、何を確認しますか？"
+     }
+    },
+    {
+     "id": "hy5",
+     "skill": "grammar",
+     "prompt": {
+      "en": "Which particle completes 手＿洗います (wash hands): を, が or に?",
+      "ne": "手＿洗います पूरा गर्ने कण कुन हो: を, が कि に?",
+      "ja": "「手＿洗います」に入る助詞は、を・が・にのどれですか？"
+     },
+     "keywords": [
+      [
+       "を",
+       "wo",
+       "'o'",
+       "(o)",
+       "particle o"
+      ]
+     ],
+     "model_answer": {
+      "en": "を: it marks the object that is washed.",
+      "ne": "を: यसले धोइने वस्तु (कर्म) जनाउँछ।",
+      "ja": "「を」です。洗う対象を表します。"
+     },
+     "probe": {
+      "en": "Make a sentence with を about the resident's face.",
+      "ne": "बासिन्दाको अनुहारबारे を प्रयोग गरेर एउटा वाक्य बनाउनुहोस्।",
+      "ja": "「を」を使って、入居者の顔について文を作ってください。"
+     }
+    },
+    {
+     "id": "hy6",
+     "skill": "recall",
+     "prompt": {
+      "en": "Name two protective items used to prevent infection. One of them is gloves (手袋).",
+      "ne": "संक्रमण रोक्न प्रयोग हुने दुई सुरक्षात्मक सामग्री भन्नुहोस्। एउटा पञ्जा (手袋) हुनुपर्छ।",
+      "ja": "感染を防ぐための防護用品を2つ答えてください。1つは手袋です。"
+     },
+     "keywords": [
+      [
+       "glove",
+       "gloves",
+       "पञ्जा",
+       "पन्जा",
+       "ग्लोभ",
+       "手袋"
+      ],
+      [
+       "mask",
+       "apron",
+       "gown",
+       "goggles",
+       "face shield",
+       "मास्क",
+       "एप्रन",
+       "マスク",
+       "エプロン",
+       "ガウン"
+      ]
+     ],
+     "model_answer": {
+      "en": "Gloves (手袋) and a mask (マスク); an apron also counts.",
+      "ne": "पञ्जा (手袋) र मास्क (マスク); एप्रन पनि मान्य हुन्छ।",
+      "ja": "手袋とマスクです。エプロンも正解です。"
+     },
+     "probe": {
+      "en": "When must you change your gloves?",
+      "ne": "पञ्जा कहिले फेर्नुपर्छ?",
+      "ja": "手袋は、どんなときに替えますか？"
+     }
+    }
+   ]
+  },
+  {
+   "id": "emergency_protocol",
+   "title": {
+    "en": "Emergency protocol",
+    "ne": "आपतकालीन प्रक्रिया",
+    "ja": "緊急対応"
+   },
+   "vocab": [
+    {
+     "jp": "転倒",
+     "reading": "てんとう",
+     "ne": "लड्नु",
+     "en": "a fall"
+    },
+    {
+     "jp": "救急車",
+     "reading": "きゅうきゅうしゃ",
+     "ne": "एम्बुलेन्स",
+     "en": "ambulance"
+    },
+    {
+     "jp": "119",
+     "reading": "ひゃくじゅうきゅう",
+     "ne": "आपतकालीन नम्बर",
+     "en": "emergency number"
+    }
+   ],
+   "questions": [
+    {
+     "id": "em1",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "転倒 (てんとう) is a serious risk in elder care. What does it mean?",
+      "ne": "転倒 (てんとう) वृद्ध हेरचाहमा गम्भीर जोखिम हो। यसको अर्थ के हो?",
+      "ja": "「転倒」は高齢者ケアで大きなリスクです。どういう意味ですか？"
+     },
+     "keywords": [
+      [
+       "fall",
+       "falling",
+       "fell",
+       "लड्",
+       "ढल्",
+       "घस्र"
+      ]
+     ],
+     "model_answer": {
+      "en": "転倒 means a fall.",
+      "ne": "転倒 को अर्थ लड्नु हो।",
+      "ja": "転倒は、たおれたり、ころんだりすることです。"
+     },
+     "probe": {
+      "en": "Name one thing in a room that raises the risk of 転倒.",
+      "ne": "転倒 को जोखिम बढाउने कोठाको एउटा कुरा भन्नुहोस्।",
+      "ja": "転倒の危険を高める、部屋の中のものを1つ答えてください。"
+     }
+    },
+    {
+     "id": "em2",
+     "skill": "recall",
+     "prompt": {
+      "en": "What number do you call for an ambulance in Japan?",
+      "ne": "जापानमा एम्बुलेन्स बोलाउन कुन नम्बर डायल गर्ने?",
+      "ja": "日本で救急車を呼ぶ番号は何番ですか？"
+     },
+     "keywords": [
+      [
+       "119",
+       "一一九",
+       "ひゃくじゅうきゅう"
+      ]
+     ],
+     "model_answer": {
+      "en": "119.",
+      "ne": "119।",
+      "ja": "119番です。"
+     },
+     "probe": {
+      "en": "What three facts should you be ready to say when the operator answers?",
+      "ne": "अपरेटरले उठाउँदा कुन तीन कुरा भन्न तयार हुनुपर्छ?",
+      "ja": "オペレーターが出たら、どんな3つのことを伝えますか？"
+     }
+    },
+    {
+     "id": "em3",
+     "skill": "comprehension",
+     "prompt": {
+      "en": "A resident has fallen and is not responding. Describe the first two steps.",
+      "ne": "एक बासिन्दा लडेका छन् र प्रतिक्रिया दिइरहेका छैनन्। पहिलो दुई कदम वर्णन गर्नुहोस्।",
+      "ja": "入居者が転んで、返事がありません。最初の2つの行動を説明してください。"
+     },
+     "keywords": [
+      [
+       "call",
+       "119",
+       "ambulance",
+       "emergency",
+       "help",
+       "एम्बुलेन्स",
+       "救急"
+      ],
+      [
+       "do not move",
+       "don't move",
+       "dont move",
+       "not move",
+       "stay",
+       "check",
+       "breathing",
+       "consciousness",
+       "pulse",
+       "सास",
+       "होश"
+      ]
+     ],
+     "model_answer": {
+      "en": "Call for help or 119, and do not move the resident; check breathing and consciousness.",
+      "ne": "सहयोग वा 119 मा फोन गर्नुहोस्, बासिन्दालाई नहल्लाउनुहोस्; सास र होश जाँच्नुहोस्।",
+      "ja": "助けまたは119番を呼び、入居者を動かさず、呼吸と意識を確認します。"
+     },
+     "probe": {
+      "en": "Why is moving the person quickly sometimes the wrong instinct?",
+      "ne": "किन छिटो सार्नु कहिलेकाहीँ गलत प्रतिक्रिया हुन्छ?",
+      "ja": "なぜ急いで動かすことが、時に間違いなのですか？"
+     }
+    },
+    {
+     "id": "em4",
+     "skill": "vocabulary",
+     "prompt": {
+      "en": "What does 救急車 (きゅうきゅうしゃ) mean?",
+      "ne": "救急車 (きゅうきゅうしゃ) को अर्थ के हो?",
+      "ja": "「救急車」とは何ですか？説明してください。"
+     },
+     "keywords": [
+      [
+       "ambulance",
+       "एम्बुलेन्स",
+       "एम्बुलेन्स",
+       "ambulens"
+      ]
+     ],
+     "model_answer": {
+      "en": "救急車 is an ambulance.",
+      "ne": "救急車 को अर्थ एम्बुलेन्स हो।",
+      "ja": "救急車は、けが人や病人を病院へ運ぶ車です。"
+     },
+     "probe": {
+      "en": "Which number do you call to get one?",
+      "ne": "यसका लागि कुन नम्बरमा फोन गर्ने?",
+      "ja": "呼ぶには、何番に電話しますか？"
+     }
+    },
+    {
+     "id": "em5",
+     "skill": "grammar",
+     "prompt": {
+      "en": "A coworker must call the nurse urgently. Which is better: 看護師を呼んでください or 看護師を呼べ? Say why.",
+      "ne": "सहकर्मीले नर्सलाई तुरुन्त बोलाउनुपर्छ। कुन राम्रो हो: 看護師を呼んでください कि 看護師を呼べ? किन?",
+      "ja": "同僚が急いで看護師を呼ぶとき、「看護師を呼んでください」と「看護師を呼べ」のどちらがよいですか？理由も答えてください。"
+     },
+     "keywords": [
+      [
+       "呼んでください",
+       "よんでください",
+       "yondekudasai",
+       "yonde kudasai",
+       "kudasai",
+       "first",
+       "former"
+      ],
+      [
+       "polite",
+       "respect",
+       "kind",
+       "command",
+       "rude",
+       "blunt",
+       "casual",
+       "impolite",
+       "आदेश",
+       "सम्मान",
+       "नम्र",
+       "अशिष्ट",
+       "丁寧",
+       "命令",
+       "失礼"
+      ]
+     ],
+     "model_answer": {
+      "en": "呼んでください is a polite request that still works in a hurry; 呼べ is a rude command.",
+      "ne": "呼んでください हतारमा पनि काम लाग्ने नम्र अनुरोध हो; 呼べ अशिष्ट आदेश हो।",
+      "ja": "「呼んでください」は急いでいても使える丁寧な依頼で、「呼べ」は失礼な命令です。"
+     },
+     "probe": {
+      "en": "How can you stay polite and fast in an emergency?",
+      "ne": "आपतकालमा नम्र र छिटो दुवै कसरी हुन सकिन्छ?",
+      "ja": "緊急のとき、丁寧さと速さをどう両立しますか？"
+     }
+    },
+    {
+     "id": "em6",
+     "skill": "recall",
+     "prompt": {
+      "en": "After a fall, name two facts you must write in the incident report.",
+      "ne": "लडाइपछि घटना प्रतिवेदनमा लेख्नुपर्ने दुई तथ्य भन्नुहोस्।",
+      "ja": "転倒のあと、事故報告書に書くべきことを2つ答えてください。"
+     },
+     "keywords": [
+      [
+       "time",
+       "when",
+       "date",
+       "समय",
+       "मिति",
+       "いつ",
+       "時間",
+       "時刻"
+      ],
+      [
+       "place",
+       "where",
+       "location",
+       "what happened",
+       "injury",
+       "injured",
+       "condition",
+       "how",
+       "ठाउँ",
+       "कहाँ",
+       "चोट",
+       "अवस्था",
+       "場所",
+       "どこ",
+       "けが",
+       "怪我",
+       "状態"
+      ]
+     ],
+     "model_answer": {
+      "en": "When it happened, where, what happened and the resident's condition.",
+      "ne": "कहिले, कहाँ, के भयो र बासिन्दाको अवस्था।",
+      "ja": "いつ、どこで、何が起きたか、入居者の状態です。"
+     },
+     "probe": {
+      "en": "Why must the report be factual and not blame anyone?",
+      "ne": "प्रतिवेदन किन तथ्यमा आधारित हुनुपर्छ र कसैलाई दोष दिनु हुँदैन?",
+      "ja": "なぜ報告書は事実だけを書き、誰かを責めてはいけないのですか？"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-dotenv>=1.0
+pytest>=8.0
+httpx>=0.27
+
+# Optional: real LLM graders (set LLM_PROVIDER in .env)
+# openai>=1.30
+# anthropic>=0.30
+
+# Optional: the LangGraph version of the answer flow (python -m app.graph_langgraph)
+# langgraph>=0.2
